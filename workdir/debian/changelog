@@ -1,0 +1,5 @@
+ethercalc (0.20170704.0-1) unstable; urgency=medium
+
+  * Initial release (Closes: #nnnn)  <nnnn is the bug number of your ITP>
+
+ -- François Lafont <francois.lafont@ac-versailles.fr>  Wed, 24 Jan 2018 03:13:35 +0100

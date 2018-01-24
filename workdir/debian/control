@@ -1,0 +1,19 @@
+Source: ethercalc
+Section: misc
+Priority: optional
+Maintainer: François Lafont <francois.lafont@ac-versailles.fr>
+Build-Depends: debhelper (>= 9)
+Standards-Version: 3.9.8
+Homepage: https://ethercalc.net/
+Vcs-Git: https://github.com/audreyt/ethercalc
+Vcs-Browser: https://github.com/audreyt/ethercalc
+
+Package: ethercalc
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: EtherCalc is a web spreadsheet
+ EtherCalc is a web spreadsheet.  Your data is saved on
+ the web, and people can edit the same document at the
+ same time. Everybody's changes are instantly reflected
+ on all screens. Work together on inventories, survey forms,
+ list management, brainstorming sessions and more! 
