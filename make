@@ -51,9 +51,10 @@ populate: clean
 	cd "$(WORK_DIR)" && uscan --download-current-version --force-download
 	cd "$(WORK_DIR)" && tar --strip-components=1 \
 	    -zxf "../$(PACKAGE_NAME)_$(VERSION).orig.tar.gz" -C .
-	cd "$(WORK_DIR)" && wget https://nodejs.org/dist/v8.9.4/node-v8.9.4-linux-x64.tar.xz -O nodejs.tar.xz
-	cd "$(WORK_DIR)" && unxz nodejs.tar.xz && tar -xf nodejs.tar
-	cd "$(WORK_DIR)" && quilt push -a
+	cd "$(WORK_DIR)" && wget https://nodejs.org/dist/v8.9.4/node-v8.9.4-linux-x64.tar.xz
+	cd "$(WORK_DIR)" && unxz node-*.xz && tar -xf node-*.tar && rm -f node-*.tar
+	cd "$(WORK_DIR)" && mv node-* nodejs
+	#cd "$(WORK_DIR)" && quilt push -a
 
 build: populate
 #	cd "$(WORK_DIR)" && debuild -b -us -uc --lintian-opts --pedantic -i -I \
