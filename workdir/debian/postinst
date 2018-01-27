@@ -20,6 +20,15 @@ set -e
 
 case "$1" in
     configure)
+
+        adduser --system --group --home /var/lib/ethercalc \
+            --gecos 'Ethercalc' ethercalc >/dev/null
+
+        mkdir -p /var/log/ethercalc/
+        touch /var/log/ethercalc/ethercalc.log
+        chown -R 'ethercalc:adm' /var/log/ethercalc
+        systemctl restart syslog.service
+
     ;;
 
     abort-upgrade|abort-remove|abort-deconfigure)

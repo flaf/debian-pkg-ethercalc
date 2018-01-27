@@ -1,3 +1,4 @@
-nodejs       opt/
-ethercalc    opt/
+nodejs                              opt/
+ethercalc                           opt/
+debian/rsyslog/10-ethercalc.conf    etc/rsyslog.d/
 
