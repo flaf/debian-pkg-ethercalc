@@ -1,0 +1,24 @@
+[Unit]
+Description=Ethercalc
+After=network.target
+Requires=syslog.service
+After=syslog.service
+Requires=redis.service
+After=redis.service
+
+[Service]
+Type=simple
+User=ethercalc
+Group=ethercalc
+ExecStart=/opt/ethercalc/bin/ethercalc --host 127.0.0.1 --port 8000 --expire 63072000
+Restart=on-failure
+
+# On envoie stdout et stderr de l'exécutable dans syslog.
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=ethercalc
+
+[Install]
+WantedBy=multi-user.target
+
+

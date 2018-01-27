@@ -54,7 +54,7 @@ populate: clean
 	cd "$(WORK_DIR)" && wget https://nodejs.org/dist/v8.9.4/node-v8.9.4-linux-x64.tar.xz
 	cd "$(WORK_DIR)" && unxz node-*.xz && tar -xf node-*.tar && rm -f node-*.tar
 	cd "$(WORK_DIR)" && mv node-* nodejs
-	cd "$(WORK_DIR)" && mkdir /opt/ethercalc
+	cd "$(WORK_DIR)" && rm -rf /opt/ethercalc && mkdir /opt/ethercalc
 	cd "$(WORK_DIR)" && PATH="$(WORK_DIR)/nodejs/bin:$$PATH" npm install --unsafe-perm \
 	    --global --prefix /opt/ethercalc "ethercalc@$(VERSION)"
 	cd "$(WORK_DIR)" && mv /opt/ethercalc $(WORK_DIR)
