@@ -58,6 +58,7 @@ populate: clean
 	cd "$(WORK_DIR)" && PATH="$(WORK_DIR)/nodejs/bin:$$PATH" npm install --unsafe-perm \
 	    --global --prefix /opt/ethercalc "ethercalc@$(VERSION)"
 	cd "$(WORK_DIR)" && mv /opt/ethercalc $(WORK_DIR)
+	cd "$(WORK_DIR)" && mv nodejs ethercalc/
 	#cd "$(WORK_DIR)" && quilt push -a
 
 build: populate
