@@ -2,6 +2,16 @@
 
 export PATH='/opt/nodejs/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
 
+user=$(id --user --name)
+group=$(id --user --name)
+
+if [ "$user" != 'ethercalc' ] && [ "$group" != 'ethercalc' ]
+then
+    printf 'Sorry, the service must be launched by the user ethercalc.\n' >&2
+    exit 1
+fi
+
+
 [ -f /etc/default/ethercalc ] && . /etc/default/ethercalc
 
 [ -z "$HOST" ]   && HOST='127.0.0.1'
