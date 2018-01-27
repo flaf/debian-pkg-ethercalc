@@ -13,7 +13,6 @@ Group=ethercalc
 ExecStart=/usr/bin/ethercalcd
 Restart=on-failure
 
-# On envoie stdout et stderr de l'exécutable dans syslog.
 StandardOutput=syslog
 StandardError=syslog
 SyslogIdentifier=ethercalc
