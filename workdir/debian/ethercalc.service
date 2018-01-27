@@ -10,7 +10,7 @@ After=redis.service
 Type=simple
 User=ethercalc
 Group=ethercalc
-ExecStart=/opt/ethercalc/bin/ethercalc --host 127.0.0.1 --port 8000 --expire 63072000
+ExecStart=/usr/bin/ethercalcd
 Restart=on-failure
 
 # On envoie stdout et stderr de l'exécutable dans syslog.

@@ -1,0 +1,12 @@
+#!/bin/sh
+
+export PATH='/opt/nodejs/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+
+[ -f /etc/default/ethercalc ] && . /etc/default/ethercalc
+
+[ -z "$HOST" ]   && HOST='127.0.0.1'
+[ -z "$PORT" ]   && PORT='8000'
+[ -z "$EXPIRE" ] && EXPIRE='0'
+
+exec /opt/ethercalc/bin/ethercalc --host "$HOST" --port "$PORT" --expire "$EXPIRE"
+

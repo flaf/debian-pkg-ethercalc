@@ -1,0 +1,6 @@
+# Warning: this is a POSIX shell fragment
+#
+HOST='127.0.0.1'
+PORT='8000'
+EXPIRE='0'
+
