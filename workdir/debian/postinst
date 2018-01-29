@@ -27,6 +27,9 @@ case "$1" in
         mkdir -p /var/log/ethercalc/
         touch /var/log/ethercalc/ethercalc.log
         chown -R 'ethercalc:adm' /var/log/ethercalc
+
+        # Systemd seems to restart syslog automatically.
+        #
         #systemctl restart syslog.service
 
     ;;
