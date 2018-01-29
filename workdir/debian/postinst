@@ -27,7 +27,7 @@ case "$1" in
         mkdir -p /var/log/ethercalc/
         touch /var/log/ethercalc/ethercalc.log
         chown -R 'ethercalc:adm' /var/log/ethercalc
-        systemctl restart syslog.service
+        #systemctl restart syslog.service
 
     ;;
 
