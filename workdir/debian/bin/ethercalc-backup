@@ -1,0 +1,34 @@
+#!/bin/sh
+
+set -e
+
+export PATH='/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+export LC_ALL='C'
+
+user=$(id --user --name)
+group=$(id --user --name)
+
+if [ "$user" != 'root' ] && [ "$group" != 'root' ]
+then
+    printf 'Sorry, this program must be launched by root.\n' >&2
+    exit 1
+fi
+
+service ethercalc stop
+sleep 1
+
+# Flushing...
+redis-cli SAVE
+
+service redis-server stop
+
+
+
+
+service redis-server start
+sleep 1
+
+service ethercalc start
+
+
+
