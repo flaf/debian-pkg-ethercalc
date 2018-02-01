@@ -1,4 +1,4 @@
 ethercalc                           opt/
 debian/rsyslog/10-ethercalc.conf    etc/rsyslog.d/
-debian/launcher/ethercalcd          usr/bin/
+debian/bin/ethercalcd               usr/bin/
 
