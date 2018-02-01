@@ -14,21 +14,31 @@ then
     exit 1
 fi
 
-service ethercalc stop
+if [ ! -d /backup-ethercalc ]
+then
+    mkdir /backup-ethercalc
+    chmod '0700' /backup-ethercalc
+fi
+
+[ -f /etc/default/ethercalc ] && . /etc/default/ethercalc
+[ -z "$RETENTION" ] && RETENTION='7'
+
+service ethercalc stop || true
 sleep 1
 
 # Flushing...
-redis-cli SAVE
+redis-cli SAVE >/dev/null
 
-service redis-server stop
+service redis-server stop || true
 
+tar -zcf "/backup-ethercalc/redis-data_$(date +%Y-%m-%d-%H%M%S).tar.gz" /var/lib/redis 2>/dev/null
 
-
-
-service redis-server start
+service redis-server start || true
 sleep 1
 
-service ethercalc start
+service ethercalc start || true
 
+# Remove backups older than $RETENTION days.
+find /backup-ethercalc/ -maxdepth 1 -type f -name 'redis-data_*.tar.gz' -mtime "+$((RETENTION -1))" -delete
 
 

@@ -1,4 +1,5 @@
 ethercalc                           opt/
 debian/rsyslog/10-ethercalc.conf    etc/rsyslog.d/
 debian/bin/ethercalcd               usr/bin/
+debian/bin/ethercalc-backup         usr/bin/
 
