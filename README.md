@@ -2,8 +2,8 @@
 
 ## Warnings
 
-* You have to build the package on **Debian Stretch amd64**
-  with the root account. Yes, this package is not at all
+* You have to build the package on **Debian Stretch amd64
+  with the root account**. Yes, this package is not at all
   Debian policy compliant. Typically, you should build this
   package in a virtual machine.
 * This package is supposed to work on **Debian Stretch amd64**.
@@ -11,7 +11,7 @@
 
 ## Install the environment to build the package
 
-These commands should be launched only once:
+These commands should be launched only once (as root):
 
 ```sh
 apt-get update && apt-get install -y git ca-certificates openssl make
@@ -22,7 +22,7 @@ cd debian-pkg-ethercalc
 
 ## Build the package
 
-At the root of this Git repository, you can launch:
+At the root of this Git repository, you can launch (as root):
 
 ```sh
 ./make build && echo 'Build is OK!'
