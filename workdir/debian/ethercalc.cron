@@ -1,4 +1,4 @@
 # Backup of Ethercalc.
-35 30 * * * root [ -x /usr/bin/ethercalc-backup ] && /usr/bin/ethercalc-backup
+35 3 * * * root [ -x /usr/bin/ethercalc-backup ] && /usr/bin/ethercalc-backup
 
 
